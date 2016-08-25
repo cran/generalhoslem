@@ -10,7 +10,7 @@ pulkrob.chisq <-
     DNAME <- paste("formula: ", deparse(formula))
     METHOD <- "Pulkstenis-Robinson chi-squared test"
     covars <- model$model[-1]
-    covars <- covars[names(covars)==catvars]
+    covars <- covars[names(covars) %in% catvars]
     covpat <- epi.cp(covars)
     yhat$score <- apply(sapply(1:ncol(yhat), function(i) { yhat[, i] * i }), 1, sum)
     yhat <- cbind(id=1:nrow(yhat), yhat, covpat=covpat$id)
