@@ -1,7 +1,7 @@
 \name{logitgof}
 \alias{logitgof}
 \title{Hosmer-Lemeshow Tests for Logistic Regression Models}
-\description{Performs the Hosmer and Lemeshow goodness-of-fit tests for binary, multinomial and ordinal regression models.}
+\description{Performs the Hosmer and Lemeshow goodness of fit tests for binary, multinomial and ordinal logistic regression models.}
 \usage{logitgof(obs, exp, g = 10, ord = FALSE)}
 \arguments{
   \item{obs}{ a vector of observed values. See details.}
@@ -48,6 +48,8 @@ A list of class \code{htest} containing:
 \code{\link{lipsitz.test}}, \code{\link{pulkrob.chisq}}.
 }
 \examples{
+### The mtcars dataset is a terrible example to use due to its small
+### size - some of the models will return warnings as a result.
 ## Binary model
 # 1/0 coding
 data(mtcars)

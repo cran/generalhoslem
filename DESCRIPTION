@@ -1,8 +1,8 @@
 Package: generalhoslem
 Type: Package
 Title: Goodness of Fit Tests for Logistic Regression Models
-Version: 1.2.4
-Date: 2016-12-16
+Version: 1.2.5
+Date: 2017-06-24
 Authors@R: person("Matthew", "Jay", role = c("aut", "cre"), email = "matthew.jay.15@ucl.ac.uk")
 Author: Matthew Jay [aut, cre]
 Maintainer: Matthew Jay <matthew.jay.15@ucl.ac.uk>
@@ -13,6 +13,6 @@ Depends: reshape, MASS, epiR, R (>= 3.3.1)
 License: GPL-2
 Suggests: nnet, mlogit, ordinal
 NeedsCompilation: no
-Packaged: 2016-12-16 07:30:45 UTC; root
+Packaged: 2017-06-24 11:12:23 UTC; matthew
 Repository: CRAN
-Date/Publication: 2016-12-16 11:20:32
+Date/Publication: 2017-06-24 21:27:16 UTC

@@ -21,6 +21,8 @@ function (obs, exp, g = 10, ord = FALSE) {
     dfobs <- data.frame(obs, cutyhats)
     dfobsmelt <- melt(dfobs, id.vars = 2)
     observed <- cast(dfobsmelt, cutyhats ~ value, length)
+    names(observed)[names(observed) != "cutyhats"] <- paste0("x",
+                                                             names(observed)[names(observed) != "cutyhats"])
     observed <- observed[order(c(1, names(observed[, 2:ncol(observed)])))]
     dfexp <- data.frame(yhat, cutyhats)
     dfexpmelt <- melt(dfexp, id.vars = ncol(dfexp))

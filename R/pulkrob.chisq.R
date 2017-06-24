@@ -1,5 +1,5 @@
 pulkrob.chisq <-
-  function(model, catvars) {
+function(model, catvars) {
     if (class(model) == "polr") {
       yhat <- as.data.frame(fitted(model))
     } else if (class(model) == "clm") {

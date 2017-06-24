@@ -1,5 +1,5 @@
 lipsitz.test <-
-  function (model, g = 10)  {
+function (model, g = 10)  {
   oldmodel <- model
   if (class(oldmodel) == "polr") {
     yhat <- as.data.frame(fitted(oldmodel))
