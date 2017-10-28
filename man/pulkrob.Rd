@@ -1,4 +1,4 @@
-\name{pulkrob.chisq}
+\name{pulkrob}
 \alias{pulkrob.chisq}
 \alias{pulkrob.deviance}
 \title{Pulkstenis-Robinson goodness of fit tests for ordinal response models.}
@@ -7,13 +7,13 @@
 pulkrob.deviance(model, catvars)
 }
 \arguments{
-  \item{model}{ an ordinal response model. Must be an object of class polr or clm.}
+  \item{model}{ an ordinal response model. Must be an object of class \code{polr} or \code{clm}.}
   \item{catvars}{ a character vector containing the names of the categorical covariates.}
 }
 \details{
-The Pulkstenis-Robinson tests are goodness of fit tests for ordinal response models. They are capable of accommodating models with continuous as well as categorical predictors. The data are partitioned according to observed covariate patterns using the categorical covariates only. Any unobserved covariate patterns are discarded and only categorical predictors are used to avoid partitioning among an unacceptably high number of covariate patterns. Each subject is assigned an ordinal response score by summing the predicted probabilities of each subject for each outcome level multiplied by equally spaced integer weights. The covariate patterns are then split into two at the median score within each.
+The Pulkstenis-Robinson tests are goodness of fit tests for ordinal logistic regression models. They are capable of accommodating models with continuous as well as categorical predictors. The data are partitioned according to observed covariate patterns using the categorical covariates only. Any unobserved covariate patterns are discarded. Only categorical predictors are used to avoid partitioning among an unacceptably high number of covariate patterns. Each subject is assigned an ordinal response score by summing the predicted probabilities of each subject for each outcome level multiplied by equally spaced integer weights. The covariate patterns are then split into two at the median score within each.
 
-Based on this partitioning, observed and expected frequencies are calculated and the test statistic computed. This statistic is distributed by the chi-squared distribution with \eqn{(2I - 1)(J - 1) - k - 1} degress of freedom, where I is the number of covariate patterns, J is the number of of response categories and k is the number of categorical variables in the model.
+Based on this partitioning, observed and expected frequencies are calculated and the test statistic computed. This statistic is distributed by the chi-squared distribution with \eqn{(2I - 1)(J - 1) - k - 1} degress of freedom, where \code{I} is the number of covariate patterns, \code{J} is the number of of response categories and k is the number of categorical variables in the model.
 
 It is recommended (Fagerland and Hosmer, 2016) that the Pulkstenis-Robinson tests be run alongside the Hosmer-Lemeshow test (\code{logitgof}) and the Lipsitz test (\code{lipsitz.test}).
 }
@@ -35,7 +35,7 @@ A list of class \code{htest} containing:
 \item Pulkstenis E, Robinson TJ. Goodness-of-fit tests for ordinal response regression models. Statistics in Medicine 2004;23:999-1014.
 }
 }
-\author{Matthew Alexander Jay}
+\author{Matthew Alexander Jay, with code from \code{epiR::epi.cp()} by Mark Stevenson.}
 \seealso{
 \code{\link{logitgof}}, \code{\link{lipsitz.test}}.
 }
