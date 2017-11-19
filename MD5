@@ -1,11 +1,11 @@
-d2a423a0d7ed4ea838a6195139845624 *DESCRIPTION
+4b2780fc645d621acaeb2175d5005988 *DESCRIPTION
 f2cdd8b427448a1044d9ab7dfbb888dc *NAMESPACE
-4ab2de13caae4ffb4793ce5bd86e196d *R/lipsitz.test.R
+d5bf282199e8f0307ba511819d08c76e *R/lipsitz.test.R
 1f99e913a25ad95edf3200ecd0b96a35 *R/logitgof.R
 9fadb42b547ec5e74c51a9fc39bd7d5c *R/pulkrob.chisq.R
 ccaf0bbbc8426561485bb9ee5c957d3b *R/pulkrob.deviance.R
-3522fcefa4d35a08e6d43b6985a36086 *build/partial.rdb
+ae0ad216b69335dfcc3d4191dc373707 *build/partial.rdb
 3424e00b98db6327f99e85bb90b32a77 *man/generalhoslem-package.Rd
-022edd35d07f8664c0df11519e81fa44 *man/lipsitz.test.Rd
+70a2bfca110e5db7e166ce19cb09647e *man/lipsitz.test.Rd
 655484fb40a3c9645ed6d6ee9c1afa2a *man/logitgof.Rd
-925696a7e3ecda3428edb5c700584650 *man/pulkrob.Rd
+2b819f34906246c2e829c2dbc814b77b *man/pulkrob.Rd
