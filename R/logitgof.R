@@ -1,5 +1,4 @@
-logitgof <-
-function (obs, exp, g = 10, ord = FALSE) {
+logitgof <- function (obs, exp, g = 10, ord = FALSE) {
   DNAME <- paste(deparse(substitute(obs)), deparse(substitute(exp)), sep = ", ")
   yhat <- exp
   if (is.null(ncol(yhat))) {
