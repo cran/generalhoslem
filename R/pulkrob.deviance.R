@@ -3,23 +3,16 @@ pulkrob.deviance <- function(model, catvars) {
     # adapted from epiR::epi.cp() by Mark Stevenson et al
     ndat <- data.frame(id = 1:nrow(dat), dat)
     if (!is.null(dim(ndat[, ncol(ndat):2]))) {
-      # Add an indicator variable for covariate patterns:
       ndat$indi <- apply(X = ndat[, ncol(ndat):2], MARGIN = 1, FUN = function(x) as.factor(paste(x, collapse = "")))
-      # Order the data according to the indicator variable:
-      ndat <- ndat[order(ndat$indi),]
-      # Create a variable that indicates all the cases of each covariate pattern:
       cp.id <- tapply(ndat$id, ndat$indi, function(x) paste(x, collapse = ","))
-      # Create a data frame of unique covariate patterns:
       cp <- unique(ndat[, 2:ncol(ndat)])
       n <- as.numeric(unlist(lapply(strsplit(cp.id, ","), length)))
       id <- tapply(ndat$id, ndat$indi, function(x) (x)[1])
       lookup <- data.frame(id = 1:length(n), indi = row.names(id))
       cov.pattern <- data.frame(id = 1:length(n), n, cp[,-ncol(cp)])
       rownames(cov.pattern) <- rownames(cp)
-      # Create a vector with the covariate pattern for each case:
       id <- lookup$id[match(ndat$indi, lookup$indi)]
     } else {
-      #ndat <- ndat[order(ndat[2]), ]
       cp.id <- tapply(ndat$id, ndat[2], function(x) paste(x, collapse = ","))
       cp <- unique(ndat[, 2:ncol(ndat)])
       n <- as.numeric(unlist(lapply(strsplit(cp.id, ","), length)))
@@ -57,7 +50,7 @@ pulkrob.deviance <- function(model, catvars) {
   observed <- cbind(covatsplit = observed[, 1], observed.cols)
   dfexp <- yhat[, !colnames(yhat) %in% c("id", "covpat", "med", "score")]
   dfexpmelt <- melt(dfexp, id.vars = ncol(dfexp))
-  expected <- cast(dfexpmelt, covpatsplit ~ variable, sum)
+  expected <- cast(dfexpmelt, covpatsplit ~ variable, sum)                             
   expected.cols <- expected[, names(expected[, 2:ncol(expected)])]
   expected.cols <- expected.cols[order(names(expected[, 2:ncol(expected)]))]
   expected <- cbind(covatsplit = expected[, 1], expected.cols)
